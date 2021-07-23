@@ -56,7 +56,7 @@ font-style: italic;
  }
 
  .checklist >li i{
-     color: var(--primary-color);
+     color: #c11623;
  }
 
 code[class*="language-"],
