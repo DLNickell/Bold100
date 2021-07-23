@@ -14,6 +14,8 @@
         <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
 
         <link rel="stylesheet" href="/css/site.css">
+        <link rel="stylesheet" href="https://use.typekit.net/xur1zsv.css">
+        <link rel="stylesheet" href="https://use.typekit.net/xur1zsv.css">
         <link rel="icon" type="img/png" href="/img/favicon-32x32.png">
         
 
@@ -27,7 +29,7 @@
     <!-- === Nav Section ===-->
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/favicon-32x32.png" class="d-inling-block align-text-top" alt="Dennis Nickell Logo" width="30" height="30"> BOLD 100</a>
+            <a class="navbar-brand boldlogo" href="#"><img src="img/favicon-32x32.png" class=" d-inling-block align-text-top" alt="Dennis Nickell Logo" width="30" height="30"> BOLD 100</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -58,10 +60,10 @@
         <div class="container px-4 py-5 mt-5">
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col col-lg-4 border-end border-2">
-                    <h1>BOLD 100: A Coding Project</h1>
-                  <h4 class="lead">Live life one loop at a time. A JavaScript codiong exercise program that displays the numbers form 0-100. Displaying the even numbers BOLD.</h4>
+                    <h1 class="boldlogo">BOLD 100: A Coding Project</h1>
+                  <h4 class="lead cresta">Live life one loop at a time. A JavaScript codeing exercise program that displays the numbers from 0-100. Displaying the even numbers BOLD.</h4>
                   <h2 class="mt-5 border-bottom border-2">Instructions</h2>
-                <p>Enter a starting value and an ending value. Press the button and the values will appear. Even numbers will be bold!</p>
+                <p class="cresta">Enter a starting value and an ending value. Press the button and the values will appear. Even numbers will be bold!</p>
                 </div>
                 
                 <div class="col col-lg-8">
@@ -75,7 +77,7 @@
                                 <input id="endValue" type="number" class="form-control" placeholder="End Value" value=100 aria-lable="End Value">
                             </div>
                             <div class="col-12 d-flex justify-content-end">
-                                <button id="btnsubmit" type="button" class="btn btn-dark btn-lg">Display the BOLD</button>
+                                <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Display the BOLD</button>
                             </div>
                         </form>
                         <h2 class="mt-5 border-bottom border-2">Results</h2>
@@ -118,6 +120,11 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     <script src="js/site.js"></script>
+    <script>
+        document.getElementById("btnSubmit") .addEventListener("click" ,getValues);
+    </script>
+    
 </body>
+
 
 </html>

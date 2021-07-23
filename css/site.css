@@ -5,10 +5,35 @@
     --white-color: #d6f0f8;
     --accent-color: #cec288; 
  }
+
+ .odd {
+    font-weight: 100;
+ }
+
+ .even {
+     font-weight: bold;
+ }
  
  body {
      color: #272525;
  }
+
+ 
+.boldlogo {
+    color: #204990;
+font-family: obliqua, sans-serif;
+font-weight: 700;
+font-style: italic;
+
+}
+
+.cresta {
+    font-family: cresta,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
  
  
 
@@ -53,9 +78,7 @@ code[class*="language-"],
      color:orangered;
  } 
 
- .css3icon {
-     color: rgb(11,82,214;
- }
+ 
 
  
 
