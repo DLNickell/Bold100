@@ -58,20 +58,82 @@
 <main class="flex-shrink-0">
     <div class="container py-4 px-5 mt-5">
         <h2 class="border-1 border-bottom border-dark">The Code for BOLD 100</h2>
-            <div class="row row-cols-1 row-cols-lg-2 pt-5">
+            <div class="row row-cols-1 row-cols-lg-2 pt-3">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                        function helloWorld() {
-                            alert("hello world");
-                        } 
+//get the values form the interface
+//Starts or Controller function
+function getValues(){
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value;
+    
+    //we need to validate out input at the beginning 
+    //parse into integers    
+    startValue = parseInt(startValue);
+    endValue = parseInt(endValue);
+
+    if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+
+        //we call generateNumbers
+        numbers = generateNumbers(startValue, endValue); 
+        //we call displayNumbers
+    displayNumbers(numbers);  
+    }else {
+        alert("You must enter integers!");
+    } 
+
+}
+//generate numbers from the startValue to the endValue
+//Loginc function(s)
+function generateNumbers(startValue, endValue){
+
+    let numbers = [];
+
+    //We want to get all numbers from start to end
+    for (let index = startValue; index <= endValue; index++) {
+        //this will execute in a loop until index = endValue
+        numbers.push(index);        
+    }
+        return numbers;
+}
+
+//Display the numbers and mark the even numbers bold
+//Display or view function
+function displayNumbers(){
+
+    let templateRows = "";
+    for (let index = 0; index < numbers.length; index++) {
+
+        let className = "even";
+        let number = numbers[index];
+
+        if(number % 2 == 0) {
+            className = "even";
+
+        }
+        else {
+            className = "odd";
+        }
+        //This does not render correctly using Prism, see the cource code
+        templateRows += `<tr><td class="${className}" >${number}</td></tr>`;
+    }
+    document.getElementById("results").innerHTML = templateRows;
+}
                     </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The code is structured in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello world is a function that displays an alert with a message of hello world</p>
+                    <h5 style="color:black;"><u>The code is structured in three functions</u></h5><br>
+                    <h5>getValues</h5>
+                    <p>getValues accepte(gets) the user input from the first value field. This value utilizes <strong>getElementById</strong> to pull the values from the page fields. It passes those values to the <strong>generateNumbers</strong> function. The function <strong>generateNumbers</strong> retunrs an array of values and passes that array to the <strong>displayNumbers</strong> function.</p>
+
+                    <h5>generateNumbers</h5>
+                    <p><strong>generateNumbers</strong> takes in two parameters, startValue and endValue. We create a variable (numbers) that holds an array. A for loop is used to generate all of the numbers between <strong>startValue</strong> and <strong>endValue</strong>.</p>
+
+                    <h5>displayNumbers</h5>
+                    <p><strong>displayNumbers</strong> takes in one perameter number. The variable numbers is an array that holds the values between <strong>startValue</strong> and <strong>endValue</strong>. We create a variable (className) that holds the name of a CSS clas we will use to bold the  even numbers. We create a variable templateRows that will hold the HTML we will write to the page.</p><br>
+
+                    <p>A for loop is used to check all numbers to see if they are odd or even. The remainder operator (%) is used to determine if the number is divisible by two. If it returns to zero, it is even. If not (else) it is odd. The correct className is injected into the HTML row for display. Each iteration of the loop adds to the tenplateRows variable. At the end of the loop, the resulting HTML rows are written to the page. The style is written in the javaScript to add stripe color to the even / bold rows.</p>
                 </div>
             </div>
     </div>
